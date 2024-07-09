@@ -45,7 +45,7 @@ class RestApiBase:
             raise NetsuiteAPIRequestError(resp.status_code, resp.text)
 
         if resp.status_code == 204:
-            return None
+            return resp
         else:
             try:
                 return json.loads(resp.text)
